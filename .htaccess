@@ -1,0 +1,6 @@
+# On suit les liens symboliques 
+Options +FollowSymlinks 
+# Activation du mod rewrite d'Apache 
+RewriteEngine On
+
+RewriteRule ^(.*)\.html$ $1.php [nc]
