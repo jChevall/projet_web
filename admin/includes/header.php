@@ -1,5 +1,18 @@
 <?php
 
+session_start();
+if ($nav !== "login") {
+    if (!isset($_SESSION['isAdmin'])) {
+        header('Location: login.php');
+        exit();
+    } else {
+        if ($_SESSION['isAdmin'] == false) {
+            header('Location: login.php');
+            exit();
+        }
+    }    
+}
+
 require_once '../class/bdd.php';
 
 spl_autoload_register('autoloader');

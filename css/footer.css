@@ -24,7 +24,7 @@
 }
 
 #footer_creator {
-    position: absolute;
+    position: fixed;
     max-height: 30em;
     display: none;
 }

@@ -20,13 +20,14 @@ class user {
         $this->bdd = PDO2::getInstance();
     }
     
-    public function emailExist($mail) {
+    public function tryLogin() {
         // Récupération de l'objet
-        $req = $this->bdd->prepare('SELECT * FROM user '
-                . 'WHERE sUserMail = :sUserMail ');
+        $req = $this->bdd->prepare('SELECT sUserMail FROM user '
+                . 'WHERE sUserMail = :sUserMail AND sUserPassword = :sUserPassword');
         
         $req->execute(array(
-            'sUserMail' => $mail,
+            'sUserMail' => $this->sUserMail,
+            'sUserPassword' => hash('sha256', 'LE_SEL_FRERE_'.$this->sUserPassword)
         ));
         
         $resultat = $req->fetch();
@@ -36,6 +37,27 @@ class user {
         }
         else {
             return "false";
-        }
+        }        
+    }
+    
+    public function login() {
+        // Récupération de l'objet
+        $req = $this->bdd->prepare('SELECT * FROM user '
+                . 'WHERE sUserMail = :sUserMail AND sUserPassword = :sUserPassword');
+        
+        $req->execute(array(
+            'sUserMail' => $this->sUserMail,
+            'sUserPassword' => hash('sha256', 'LE_SEL_FRERE_'.$this->sUserPassword)
+        ));
+        
+        $resultat = $req->fetch();
+        
+        $this->kIDUser = $resultat['kIDUser'];
+        $this->sUserNom = $resultat['sUserNom'];
+        $this->sUserPrenom = $resultat['sUserPrenom'];
+        $this->sUserPassword = $resultat['sUserPassword'];
+        $this->sUserMail = $resultat['sUserMail'];
+        $this->bUserValidate = $resultat['bUserValidate'];
+        $this->bUserAdmin = $resultat['bUserAdmin'];
     }
 }

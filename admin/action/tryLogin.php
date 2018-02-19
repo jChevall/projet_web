@@ -9,4 +9,7 @@ function autoloader($classname) {
 }
 
 $user = new user();
-echo $user->emailExist($_GET['mail']);
+$user->sUserMail = $_GET['mail'];
+$user->sUserPassword = $_GET['pass'];
+
+echo $user->tryLogin();
