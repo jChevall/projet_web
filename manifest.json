@@ -1,0 +1,21 @@
+{
+  "lang": "fr",
+  "name": "Tan Créations",
+  "short_name": "TanC",
+  "icons": [
+    {
+      "src": "img/pwa.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/pwa_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#4CAF50",
+  "background_color": "#1E1F1F",
+  "start_url": "/3il/index.html",
+  "display": "standalone"
+}

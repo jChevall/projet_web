@@ -1,0 +1,41 @@
+/* CSS écran large */
+.body {
+    display: flex;
+    text-align: center;
+    padding: 10vh 0;
+}
+
+.body h1 {
+    color: white;
+}
+
+.porto {
+    flex: 1;
+    padding: 2em 2.5em;
+}
+
+.porto img {
+    max-width: 17vw;
+}
+
+.body_blabla {
+    flex: 1.5;
+    padding: 2em;
+}
+
+.body_blabla p, .body_blabla h1 {
+    color: white;
+}
+
+
+@media screen and (max-width: 890px) {
+    .body {
+        display: block;
+    }
+    .porto {
+        padding-bottom: 0px;
+    }
+    .body_blabla {
+        padding-top: 0px;
+    }
+}

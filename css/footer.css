@@ -1,0 +1,30 @@
+.footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    background-color: #4CAF50;
+    background-size: cover;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.footer p {
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 400;
+    margin: inherit;
+}
+
+.footer a {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+#footer_creator {
+    position: absolute;
+    max-height: 30em;
+    display: none;
+}

@@ -1,0 +1,13 @@
+body {
+    margin: inherit;
+    background-color: #1E1F1F;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
