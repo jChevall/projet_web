@@ -29,7 +29,7 @@ class article {
         ));
         
         $resultat = $req->fetch();
-        var_dump($resultat, "<br>");
+        
         if ($resultat != NULL) {
             $this->dArticleDate = $resultat['dArticleDate'];
             $this->sArticleTitle = $resultat['sArticleTitle'];
@@ -51,7 +51,7 @@ class article {
         
         $resultat = $req->fetch();
         
-        $retour;
+        $retour = null;
         $i = 0;
         while($resultat!=NULL){
             $temp = new article();
@@ -62,7 +62,7 @@ class article {
             $resultat = $req->fetch();
         }
         
-        return $retour;   
+        return $retour;
     }
     
     public function update() {

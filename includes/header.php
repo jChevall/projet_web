@@ -18,9 +18,9 @@ $website = new website('');
     <link href="css/header.css" rel="stylesheet" type="text/css"/>
     <link href="css/body.css" rel="stylesheet" type="text/css"/>
     <link href="css/footer.css" rel="stylesheet" type="text/css"/>
-    <link href="css/rea.css" rel="stylesheet" type="text/css"/>
-    <link href="css/blog.css" rel="stylesheet" type="text/css"/>
-    <link href="css/contact.css" rel="stylesheet" type="text/css"/>
+    <?=$nav === "rea" ? '<link href="css/rea.css" rel="stylesheet" type="text/css"/>': ""?>
+    <?=$nav === "blog" ? '<link href="css/blog.css" rel="stylesheet" type="text/css"/>': ""?>
+    <?=$nav === "contact" ? '<link href="css/contact.css" rel="stylesheet" type="text/css"/>': ""?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#4CAF50">
     <title><?=$website->title?></title>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <?php include 'includes/header.php'; ?>
+    <?php 
+        $nav = "rea";
+        include 'includes/header.php';
+    ?>
     <body>
-        <?php
-            $nav = "rea";
-            include 'includes/nav.php'; 
-        ?>
+        <?php include 'includes/nav.php'; ?>
         <!-- BODY -->
         <div class="body">
             <ul>
                 <?php 
                     // Liste des images
-                    $dir    = 'img/rea';
+                    $dir   = 'img/rea';
                     $files = scandir($dir, 1);
 
                     foreach ($files as $file) {

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <?php include 'includes/header.php'; ?>
+    <?php 
+        $nav = "contact";
+        include 'includes/header.php'; 
+    ?>
     <body>
-        <?php
-            $nav = "contact";
-            include 'includes/nav.php'; 
-        ?>
+        <?php include 'includes/nav.php'; ?>
         <!-- BODY -->
         <div class="body">
             <div class="form">
@@ -30,13 +30,13 @@
                 <h1>Informations :</h1>
                 <div class="innerInfo">
                     <div class="divImg">
-                        <img class="contactImg" src="img/contact.jpg" alt=""/>                        
+                        <img class="contactImg" src="img/contact.jpg" alt=""/>
                     </div>
                     <div class="divInfo">
-                        <p>Jacques CHIRAC</p>
-                        <p>Tel : 06 69 69 69 69</p>
-                        <p>Mail : BibiDevant@elysee.lolo</p>
-                        <p>Numéro SIREN : 012 234 567</p>                        
+                        <p><?=$website->contact_name?></p>
+                        <p>Tel : <?=$website->contact_tel?></p>
+                        <p>Mail : <?=$website->contact_mail?></p>
+                        <a href="<?=$website->contact_facebook?>">Facebook</a> <span>-</span> <a href="<?=$website->contact_twitter?>">Twitter</a>
                     </div>
                 </div>
                 

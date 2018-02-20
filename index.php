@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <?php include 'includes/header.php'; ?>
+    <?php 
+        $nav = "index";
+        include 'includes/header.php'; 
+    ?>
     <body>
-        <?php
-            $nav = "index";
-            include 'includes/nav.php'; 
-        ?>
+        <?php include 'includes/nav.php'; ?>
         <!-- BODY -->
         <div class="body">
             <div class="porto">

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <?php include 'includes/header.php'; ?>
+    <?php 
+        $nav = "rdv";
+        include 'includes/header.php'; 
+    ?>
     <body>
         <?php
-            $nav = "blog";
             include 'includes/nav.php'; 
         ?>
         <!-- BODY -->

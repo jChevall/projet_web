@@ -31,13 +31,13 @@ class mail {
         $mail = new PHPMailer(true);
         
         $mail->isHTML();
-        $mail->IsSMTP(); // telling the class to use SMTP
-        $mail->SMTPAuth = true; // enable SMTP authentication
-        $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
-        $mail->Host = $this->Host; // sets GMAIL as the SMTP server
-        $mail->Port = 465; // set the SMTP port for the GMAIL server
-        $mail->Username = $this->Username; // GMAIL username
-        $mail->Password = $this->Password; // GMAIL password
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "ssl";
+        $mail->Host = $this->Host;
+        $mail->Port = 465;
+        $mail->Username = $this->Username;
+        $mail->Password = $this->Password;
 
         //Typical mail data
         $mail->AddAddress($this->To, $this->ToName);
