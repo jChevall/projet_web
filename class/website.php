@@ -8,6 +8,7 @@ class website {
     public $title;
     public $accueil_title;
     public $accueil_text;
+    public $mail_to;
     
     private $path = "webdata.xml";
     
@@ -16,5 +17,6 @@ class website {
         $this->title = $xml->title;
         $this->accueil_title = $xml->accueil_title;
         $this->accueil_text = $xml->accueil_text;
+        $this->mail_to = $xml->mail_to;
     }
 }

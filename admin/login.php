@@ -23,7 +23,7 @@
                       <input id="input_pass" type="password" name="pass" class="form-control" placeholder="Mot de passe" required>
                     </div>
                 </form>
-                    <input type="submit" id="login_submit">
+                <input type="submit" id="login_submit">
             </div>
             <div class="col"></div>
         </div>

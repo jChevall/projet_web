@@ -1,11 +1,22 @@
-.form{
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-    width: 1000px;
+.form {
+    padding: 0 5vw;
+    flex: 1;
 }
 
-input[type=text], select {
+.form-group {
+    text-align: left;
+}
+
+.info {
+    flex: 2;
+    padding: 0 10vw;
+}
+
+label {
+    color: white;
+}
+
+input, select, textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -30,3 +41,29 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+.innerInfo {
+    display: flex;
+}
+
+.divImg {
+    margin-right: 1vw;
+}
+
+.contactImg {
+    max-width: 30vw;   
+}
+
+.divInfo {
+    margin: auto;
+}
+
+
+@media screen and (max-width: 890px) {
+    .innerInfo {
+        display: block;
+    }
+    
+    .contactImg {
+        max-width: 60vw;   
+    }
+}
