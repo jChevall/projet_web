@@ -11,13 +11,13 @@ function trySendMail() {
     // Regex sur l'email
     if (validateEmail(input_mail.value) === false) {
         // Affichage d'un message d'erreur et refus du formulaire
-        alert('mail');
+        alert('L\'adresse email est incorrecte.');
         return false;
     }
     
     // Vérification des champs non vide
     if (input_name.value === "" || input_name.value === null || input_content.value === "" || input_content.value === null) {
-        alert('empty');
+        alert('Un ou plusieurs champs sont vides.');
         return false;
     }
     
