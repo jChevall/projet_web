@@ -34,3 +34,32 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+
+.submit-file {
+    width: 100%;
+    background-color: #00000029!important;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-file:hover {
+    background-color: #45a049;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.inline-form-group {
+    display: flex;
+}
+
+.inlineCol {
+    flex: 1;
+    margin: 0 1vh;
+}
