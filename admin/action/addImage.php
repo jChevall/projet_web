@@ -16,7 +16,7 @@ if (!isset($_SESSION['isAdmin'])) {
 // bref, quite a être niquer, autant pas perdre de temps
 
 $extension_upload = strtolower(  substr(  strrchr($_FILES['img']['name'], '.')  ,1)  );
-$nom = md5(uniqid(rand(), true));
+$nom = time().md5(uniqid(rand(), true));
 
 move_uploaded_file($_FILES['img']['tmp_name'],'../../img/rea/'.$nom.'.'.$extension_upload);
   
