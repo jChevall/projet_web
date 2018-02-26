@@ -1,0 +1,13 @@
+.webdata {
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    margin: 2vh 0;
+}
+
+.col {
+    flex: 1;
+    margin: 0 5vw;
+}

@@ -26,7 +26,13 @@
                                 <h1><?=$article->sArticleTitle?></h1>
                                 <p><?=$article->sArticleMedia?></p>
                                 <p><?=$article->sArticleText?></p>
-                                <p>Crée le <?=$article->dArticleDate?></p>
+                                <p>Crée le <?php 
+                                    setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');                                    
+                                    // séparation jour, mois et années
+                                    list($year, $month, $day) = explode("-", $article->dArticleDate);
+                                    
+                                    // affichage au format francophone
+                                    echo $lastmodified = "$day/$month/$year";?></p>
                             </div>
                         <?php 
                         }
