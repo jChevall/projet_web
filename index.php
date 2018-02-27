@@ -16,7 +16,7 @@
             </div>
             <div class="body_blabla">
                 <h1><?=$website->accueil_title?></h1>
-                <p><?=$website->accueil_text?> </p>
+                <p><?=nl2br($website->accueil_text)?> </p>
             </div>
         </div>
         <?php include 'includes/footer.php'; ?>
