@@ -83,13 +83,13 @@
                         <div class="row">
                             <div class="col">
                                 <?php
-                                    Echo '<button onclick="updateRdv(' . $lesson->kIDCours . ');">Modifier</button>';
+                                    Echo '<button class="button" onclick="updateRdv(' . $lesson->kIDCours . ');">Modifier</button>';
                                 ?>
                             </div>
                             <div class="col">
                                 <form action="action/delete_rdv.php" method="post" id="form_<?php $lesson->kIDCours ?>">
                                     <input style="display: none" value="<?=$lesson->kIDCours?>" name="input_rdv_id">
-                                    <button>Supprimer</button>                                    
+                                    <button class="button">Supprimer</button>                                    
                                 </form>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             <div class="row">
                                 <div class="col">
                                     <?php
-                                    Echo '<button onclick="validateUdateRdv(' . $lesson->kIDCours . ');">Validate</button>';
+                                    Echo '<button class="button" onclick="validateUdateRdv(' . $lesson->kIDCours . ');">Validate</button>';
                                     ?>
                                 </div>                        
                             </div>

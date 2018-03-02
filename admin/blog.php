@@ -78,13 +78,13 @@
                         <div class="row">
                             <div class="col">
                                 <?php
-                                    Echo '<button onclick="udateArticle(' . $article->kIDArticle . ');">Modifier</button>';
+                                    Echo '<button class="button" onclick="udateArticle(' . $article->kIDArticle . ');">Modifier</button>';
                                 ?>
                             </div>
                             <div class="col">
                                 <form action="action/delete_article.php" method="post" id="form_<?php $article->kIDArticle ?>">
                                     <input style="display: none" value="<?=$article->kIDArticle?>" name="input_article_id">
-                                    <button>Supprimer</button>                                    
+                                    <button class="button">Supprimer</button>                                    
                                 </form>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                             <div class="row">
                                 <div class="col">
                                     <?php
-                                    Echo '<button onclick="validateUdateArticle(' . $article->kIDArticle . ');">Validate</button>';
+                                    Echo '<button class="button" onclick="validateUdateArticle(' . $article->kIDArticle . ');">Validate</button>';
                                     ?>
                                 </div>                        
                             </div>
