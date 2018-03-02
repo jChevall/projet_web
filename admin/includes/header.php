@@ -32,5 +32,7 @@ $website = new website('../');
     <link href="css/index.css" rel="stylesheet" type="text/css"/>
     <link href="../css/footer.css" rel="stylesheet" type="text/css"/>
     <link href="css/login.css" rel="stylesheet" type="text/css"/>
+    <link href="css/blog.css" rel="stylesheet" type="text/css"/>
+    <link href="css/rdv.css" rel="stylesheet" type="text/css"/>
     <title><?=$website->title?></title>
 </head>

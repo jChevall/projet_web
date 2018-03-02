@@ -61,7 +61,6 @@ class article {
             $i++;
             $resultat = $req->fetch();
         }
-        
         return $retour;
     }
     

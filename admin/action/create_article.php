@@ -20,12 +20,14 @@ function autoloader($classname) {
     include_once '../../class/' . $classname . '.php';
 }
 
-$artcile = new article();
+$website = new website("../../");
 
-$website->sArticleTitle = $_POST['input_article_title'];
-$website->sArticleText = $_POST['input_article_text'];
+$website->title = $_POST['input_site_title'];
+$website->accueil_title = $_POST['input_accueil_title'];
+$website->accueil_text = $_POST['input_accueil_text'];
+$website->mail_to = $_POST['input_site_mail'];
 
-$website->create();
+$website->save();
 
 header('Location: ../index.php');
 exit();
