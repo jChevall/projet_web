@@ -1,0 +1,16 @@
+.body {
+    display: block
+}
+
+.howto {
+    margin: 5vh 10vw;
+}
+
+.liste {
+    display: flex
+}
+
+.cour {
+    flex: 1;
+    margin: 5vh 5vw 0 5vw;
+}

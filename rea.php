@@ -18,8 +18,9 @@
                         if ($file === "." || $file === "..") {
                             continue;
                         }
-                        echo '<li><img class="rea_img" src="img/rea/'.$file.'" alt=""/><li>';
-                    }
+                        echo '<li><a href="#'.$file.'"><img class="rea_img" src="img/rea/'.$file.'" alt=""/></a><li>';
+                        echo '<a href="#_" class="lightbox" id="'.$file.'"><img src="img/rea/'.$file.'"></a>';
+                        }
                 ?>
             </ul>
             <div class="clear"></div>

@@ -15,7 +15,7 @@ class PDO2 extends PDO {
     public static function getInstance() {
         if (!isset(self::$_instance)) {
             try {
-                self::$_instance = new PDO('mysql:host=localhost;dbname=tan_creations', 'root', '');
+                self::$_instance = new PDO('mysql:host=localhost;dbname=tan_creations;charset=UTF8', 'root', '');
             } catch (PDOException $e) {
                 echo $e;
             }
