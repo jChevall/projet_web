@@ -35,7 +35,6 @@ class article {
             $this->sArticleTitle = $resultat['sArticleTitle'];
             $this->sArticleText = $resultat['sArticleText'];
             $this->sArticleMedia = $resultat['sArticleMedia'];
-            $this->kIDCreator = $resultat['kIDCreator'];
         }
         else {
             $this->kIDArticle = -1;
@@ -66,26 +65,20 @@ class article {
     
     public function update() {
         $req = $this->bdd->prepare('UPDATE articles '
-                . 'SET dArticleDate = :dArticleDate, '
-                . 'sArticleTitle = :sArticleTitle, '
-                . 'sArticleText = :sArticleText, '
-                . 'sArticleMedia = :sArticleMedia, '
-                . 'kIDCreator = :kIDCreator '
+                . 'SET sArticleTitle = :sArticleTitle, '
+                . 'sArticleText = :sArticleText '
                 . 'WHERE kIDArticle = :kIDArticle ');
         $req->execute(array(
-            'dArticleDate' => $this->dArticleDate,
             'sArticleTitle' => $this->sArticleTitle,
             'sArticleText' => $this->sArticleText,
-            'sArticleMedia' => $this->sArticleMedia,
-            'kIDCreator' => $this->kIDCreator,
             'kIDArticle' => $this->kIDArticle
         ));   
     }
     
     public function create() {
         $req = $this->bdd->prepare(
-            'INSERT INTO articles(sArticleTitle, sArticleText, sArticleMedia, kIDCreator) '
-            . 'VALUES(:sArticleTitle, :sArticleText, :sArticleMedia, :kIDCreator)'
+            'INSERT INTO articles(sArticleTitle, sArticleText, sArticleMedia, dArticleDate) '
+            . 'VALUES(:sArticleTitle, :sArticleText, :sArticleMedia, :dArticleDate)'
         );
         
         //Execution de la requete préparer avec les variables associés
@@ -93,22 +86,20 @@ class article {
             'sArticleTitle' => $this->sArticleTitle,
             'sArticleText' => $this->sArticleText,
             'sArticleMedia' => $this->sArticleMedia,
-            'kIDCreator' => $this->kIDCreator
+            'dArticleDate' => $this->dArticleDate
         ));
         
-        // Récupération de l'id et de la date
+        // Récupération de l'id
         $req = $this->bdd->prepare('SELECT kIDArticle FROM articles '
                 . 'WHERE sArticleTitle = :sArticleTitle '
                 . 'AND sArticleText = :sArticleText '
                 . 'AND sArticleMedia = :sArticleMedia  '
-                . 'AND kIDCreator = :kIDCreator  '
                 . 'ORDER BY dArticleDate DESC');
         
         $req->execute(array(
             'sArticleTitle' => $this->sArticleTitle,
             'sArticleText' => $this->sArticleText,
             'sArticleMedia' => $this->sArticleMedia,
-            'kIDCreator' => $this->kIDCreator
         ));
         
         $resultat = $req->fetch();

@@ -11,7 +11,7 @@
         <!-- BODY -->
         <div class="body">
             <div class="howto">
-                <h1>Comment reservez ?</h1>
+                <h1>Comment reserver ?</h1>
                 <p>Si l'un de nos cours vous intéresse vous pouvez prendre rendez-vous du lundi au vendredi de 9h00 à 18h et le samedi de 9h00 à 12h par téléphone au <?=$website->contact_tel?> ou par e-mail : <?=$website->contact_mail?></p>
             </div>
             <hr>

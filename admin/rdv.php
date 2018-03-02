@@ -11,89 +11,136 @@
         <!-- BODY -->
         <div class="body">
             <div class="webdata">
-                <h1>Modification des informations générales du site :</h1>
-                <form action="action/update_general.php" method="post" id="form_general">
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Titre du site internet : </label>
-                                <input value="<?=$website->title?>" id="input_site_title" type="text" name="input_site_title" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Adresse e-mail de l'administrateur : </label>
-                                <input value="<?=$website->mail_to?>" id="input_site_mail" type="email" name="input_site_mail" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Titre de l'accueil : </label>
-                                <input value="<?=$website->accueil_title?>" id="input_accueil_title" type="text" name="input_accueil_title" class="form-control" required>
-                            </div>                            
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Texte de l'accueil : </label>
-                                <textarea rows="4" cols="50" name="input_accueil_text" id="input_accueil_text"> <?=$website->accueil_text?></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <h1>Modification des rendez-vous du site :</h1>
+                
+                
                 <div class="row">
                     <div class="col">
-                        <input type="submit" id="general_submit">
+                        <input type="submit" id="newRdv_submit" value="Nouveau rendez-vous">
                     </div>                        
+                </div>                
+                <div id="newRdv" class="row" style="display: none">                
+                    <form action="action/create_rdv.php" method="post" id="form_general">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Nom du rendez-vous : </label>
+                                    <input value="" id="input_rdv_title" type="textarea" name="input_rdv_title" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Description du rendez-vous : </label>
+                                    <textarea rows="4" cols="50" name="input_rdv_text" id="input_rdv_text"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col">
+                                <div class="form-group">
+                                    <label>Date : </label>
+                                    <input value="" id="input_rdv_date" type="date" name="input_rdv_date" class="form-control" required>
+                                </div>
+                        </div>
+                        <div class="col">
+                                <div class="form-group">
+                                    <label>Nombre de place maximun : </label>
+                                    <input value="" id="input_rdv_max" type="number" name="input_rdv_max" class="form-control" required>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="submit" id="newRdv_submit">
+                        </div>                        
+                    </div>
+                    </form>
+                    
                 </div>
-                    <br><hr>
-                <form action="action/update_contact.php" method="post" id="form_contact">
-                    <h1>Modification des informations de contact :</h1>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Nom du contact : </label>
-                                <input value="<?=$website->contact_name?>" id="input_contact_name" type="text" name="input_contact_name" class="form-control" required>
+                    
+                <?php                
+                    // Liste des article
+                    $cours = new cours();
+                    $cours = $cours->getAllCours();
+                    if ($cours === null) { ?>
+                        <div>
+                            <h1>Aucun article</h1>
+                            <h3>Ecrivez votre premier article ;)</h3>
+                        </div>
+                    <?php 
+                    } else {
+                    foreach ($cours as $lesson) { ?>
+                        <div>
+                            <label><?=$lesson->sCoursName?></label>                          
+                            <label>le <?php 
+                                setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');                                    
+                                // séparation jour, mois et années
+                                list($year, $month, $day) = explode("-", $lesson->dCoursDate);
+
+                                // affichage au format francophone
+                                echo $lastmodified = "$day/$month/$year";?></label>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <?php
+                                    Echo '<button onclick="updateRdv(' . $lesson->kIDCours . ');">Modifier</button>';
+                                ?>
+                            </div>
+                            <div class="col">
+                                <form action="action/delete_rdv.php" method="post" id="form_<?php $lesson->kIDCours ?>">
+                                    <input style="display: none" value="<?=$lesson->kIDCours?>" name="input_rdv_id">
+                                    <button>Supprimer</button>                                    
+                                </form>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Numéro de téléphone du contact : </label>
-                                <input value="<?=$website->contact_tel?>"id="input_contact_tel" type="text" name="input_contact_tel" class="form-control" required>
+                            
+                        <div id="<?=$lesson->kIDCours?>" class="row" style="display: none">  
+                            <form action="action/update_rdv.php" method="post" id="form_<?php $lesson->kIDCours ?>">
+                                
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Nom du rendez-vous : </label>
+                                            <input value="<?= $lesson->sCoursName ?>" id="input_rdv_title" type="textarea" name="input_rdv_title" class="form-control" required>
+                                            <input style="display: none" value="<?= $lesson->kIDCours ?>" name="input_rdv_id">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Description du rendez-vous : </label>
+                                            <textarea rows="4" cols="50" name="input_rdv_text" id="input_rdv_text"><?= $lesson->sCoursDesc ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col">
+                                        <div class="form-group">
+                                            <label>Date : </label>
+                                            <input value="<?= $lesson->dCoursDate ?>" id="input_rdv_date" type="date" name="input_rdv_date" class="form-control" required>
+                                        </div>
+                                </div>
+                                <div class="col">
+                                        <div class="form-group">
+                                            <label>Nombre de place maximun : </label>
+                                            <input value="<?= $lesson->iCoursMax ?>" id="input_rdv_max" type="number" name="input_rdv_max" class="form-control" required>
+                                        </div>
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                    <?php
+                                    Echo '<button onclick="validateUdateRdv(' . $lesson->kIDCours . ');">Validate</button>';
+                                    ?>
+                                </div>                        
+                            </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Adresse e-mail du contact : </label>
-                                <input value="<?=$website->contact_mail?>" id="input_contact_mail" type="email" name="input_contact_mail" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Adresse facebook : </label>
-                                <input value="<?=$website->contact_facebook?>" id="input_contact_facebook" type="text" name="input_contact_facebook" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label>Adresse twitter : </label>
-                                <input value="<?=$website->contact_twitter?>" id="input_contact_twitter" type="text" name="input_contact_twitter" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="row">
-                    <div class="col">
-                        <input type="submit" id="contact_submit">
-                    </div>                        
-                </div>
+                    <?php 
+                    }
+                    }
+                ?>
+                
             </div>
         </div>
         <?php include 'includes/footer.php'; ?>

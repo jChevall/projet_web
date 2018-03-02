@@ -20,18 +20,9 @@ function autoloader($classname) {
     include_once '../../class/' . $classname . '.php';
 }
 
-$article = new article();
+$cours = new cours();
+$cours->kIDCours = $_POST['input_rdv_id'];
+$cours->delete();
 
-$article->sArticleTitle = $_POST['input_article_title'];
-$article->sArticleText = $_POST['input_article_text'];
-$article->sArticleMedia = "";
-
-$date = new DateTime();
-$date = $date->format('Y-m-d H:i:s');
-
-$article->dArticleDate = $date;
-
-$article->create();
-
-header('Location: ../blog.php');
+header('Location: ../rdv.php');
 exit();

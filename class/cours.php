@@ -70,7 +70,7 @@ class cours {
                 . 'SET sCoursName = :sCoursName, '
                 . 'dCoursDate = :dCoursDate, '
                 . 'iCoursMax = :iCoursMax, '
-                . 'sCoursDesc = :sCoursDesc, '
+                . 'sCoursDesc = :sCoursDesc '
                 . 'WHERE kIDCours = :kIDCours ');
         $req->execute(array(
             'sCoursName' => $this->sCoursName,
@@ -83,7 +83,7 @@ class cours {
     
     public function create() {
         $req = $this->bdd->prepare(
-            'INSERT INTO articles(sCoursName, dCoursDate, iCoursMax, sCoursDesc) '
+            'INSERT INTO cours(sCoursName, dCoursDate, iCoursMax, sCoursDesc) '
             . 'VALUES(:sCoursName, :dCoursDate, :iCoursMax, :sCoursDesc)'
         );
         
@@ -95,7 +95,7 @@ class cours {
             'sCoursDesc' => $this->sCoursDesc
         ));
         
-        // Récupération de l'id et de la date
+        // Récupération de l'id 
         $req = $this->bdd->prepare('SELECT kIDCours FROM cours '
                 . 'WHERE sCoursName = :sCoursName '
                 . 'AND dCoursDate = :dCoursDate '

@@ -21,17 +21,8 @@ function autoloader($classname) {
 }
 
 $article = new article();
-
-$article->sArticleTitle = $_POST['input_article_title'];
-$article->sArticleText = $_POST['input_article_text'];
-$article->sArticleMedia = "";
-
-$date = new DateTime();
-$date = $date->format('Y-m-d H:i:s');
-
-$article->dArticleDate = $date;
-
-$article->create();
+$article->kIDArticle = $_POST['input_article_id'];
+$article->delete();
 
 header('Location: ../blog.php');
 exit();

@@ -20,14 +20,21 @@ function autoloader($classname) {
     include_once '../../class/' . $classname . '.php';
 }
 
-$website = new website("../../");
+$cours = new cours();
 
-$website->title = $_POST['input_site_title'];
-$website->accueil_title = $_POST['input_accueil_title'];
-$website->accueil_text = $_POST['input_accueil_text'];
-$website->mail_to = $_POST['input_site_mail'];
+$cours->sCoursName = $_POST['input_rdv_title'];
+$cours->sCoursDesc = $_POST['input_rdv_text'];
+$cours->dCoursDate = $_POST['input_rdv_date'];
+$cours->iCoursMax = $_POST['input_rdv_max'];
+$cours->kIDCours = $_POST['input_rdv_id'];
 
-$website->save();
+echo $cours->sCoursName;
+echo $cours->sCoursDesc;
+echo $cours->dCoursDate;
+echo $cours->iCoursMax;
+echo $cours->kIDCours;
 
-header('Location: ../index.php');
+$cours->update();
+
+header('Location: ../rdv.php');
 exit();

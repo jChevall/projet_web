@@ -24,14 +24,14 @@ $article = new article();
 
 $article->sArticleTitle = $_POST['input_article_title'];
 $article->sArticleText = $_POST['input_article_text'];
-$article->sArticleMedia = "";
+$article->kIDArticle = $_POST['input_article_id'];
 
 $date = new DateTime();
 $date = $date->format('Y-m-d H:i:s');
 
 $article->dArticleDate = $date;
 
-$article->create();
+$article->update();
 
 header('Location: ../blog.php');
 exit();
