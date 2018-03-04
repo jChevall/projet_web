@@ -3,7 +3,7 @@
 /**
  * Description of user
  *
- * @author Enzo Blanchon
+ * @author Jérémi Chevallier
  */
 class user {
     

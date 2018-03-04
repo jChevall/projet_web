@@ -64,8 +64,8 @@
                     $cours = $cours->getAllCours();
                     if ($cours === null) { ?>
                         <div>
-                            <h1>Aucun article</h1>
-                            <h3>Ecrivez votre premier article ;)</h3>
+                            <h1>Aucun rendez-vous</h1>
+                            <h3>Ecrivez votre rendez-vous/cours ;)</h3>
                         </div>
                     <?php 
                     } else {

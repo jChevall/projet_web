@@ -2,7 +2,7 @@
 /**
  * Récupère les données liées au contenu du site web stockées dans un fichier XML
  *
- * @author Enzo Blanchon
+ * @author Jérémi Chevallier
  */
 class website {
     public $prefix;

@@ -2,7 +2,7 @@
 /**
  * Description of article
  *
- * @author Enzo Blanchon
+ * @author Jérémi Chevallier
  */
 class article {
     public $kIDArticle;

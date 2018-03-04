@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 /**
  * Description of mail
  *
- * @author Enzo Blanchon
+ * @author Jérémi Chevallier
  */
 class mail {
     public $Host;

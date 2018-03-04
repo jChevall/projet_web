@@ -3,7 +3,7 @@
 /**
  * Description of cours
  *
- * @author Enzo Blanchon
+ * @author Jérémi Chevallier
  */
 class cours {
     public $kIDCours;

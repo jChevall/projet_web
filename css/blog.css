@@ -4,6 +4,7 @@
 
 .articleText {
   color : white;
+  flex: 1.5;
 }
 
 .articleDate {
@@ -11,10 +12,24 @@
 }
 
 .articleImage {
+    display: inline;
+    max-height: 50vh;
+    max-width: 50vw;
 }
 
 .body ul{
     padding: 1.5em;
     text-align: justify;
     width: 100%;
+}
+
+
+.row {
+    display: flex;
+    margin: 2vh 0;
+}
+
+.col {
+    flex: 1;
+    margin: 0 5vw;
 }
