@@ -11,6 +11,15 @@ ul li img{
      max-height:50vh;
 }
 
+.row {
+    display: flex;
+    margin: 2vh 0;
+}
+
+.col {
+    flex: 1;
+    margin: 0 5vw;
+}
 
 @media screen and (max-width: 890px) {
     ul li img{

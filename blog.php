@@ -15,14 +15,14 @@
                     $articles = $articles->getAllArticle();
                     
                     if ($articles === null) { ?>
-                        <div>
+                        <div class="row">
                             <h1>Aucun article disponible.</h1>
                             <h3>Revenez plus tard ;)</h3>
                         </div>
                     <?php 
                     } else {
                         foreach ($articles as $article) { ?>
-                            <div>
+                            <div class="row">
                                 <h1><?=$article->sArticleTitle?></h1>
                                 <p><?=$article->sArticleMedia?></p>
                                 <p><?=$article->sArticleText?></p>
@@ -30,7 +30,7 @@
                                     setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');                                    
                                     // séparation jour, mois et années
                                     list($year, $month, $day) = explode("-", $article->dArticleDate);
-                                    
+
                                     // affichage au format francophone
                                     echo $lastmodified = "$day/$month/$year";?></p>
                             </div>
