@@ -67,7 +67,7 @@
                     </form>
                     
                 </div>
-                    
+                <hr>
                 <?php                
                     // Liste des article
                     $articles = new article();
@@ -81,21 +81,21 @@
                     <?php 
                     } else {
                     foreach ($articles as $article) { ?>
-                        <br><hr>
-                        <div>
-                            <label><?=$article->sArticleTitle?></label>                          
-                            <label>Crée le <?php 
+                    <div class="article">
+                        <div class="article_title"><p><?=$article->sArticleTitle?></p></div>
+                        <div class="article_date"><p>
+                              Crée le <?php
                                 setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');                                    
                                 // séparation jour, mois et années
                                 list($year, $month, $day) = explode("-", $article->dArticleDate);
 
                                 // affichage au format francophone
-                                echo $lastmodified = "$day/$month/$year";?></label>
-                        
-                        <div class="row">
+                                echo $lastmodified = "$day/$month/$year";?>  
+                        </p></div>
+                        <div class="row article_btn_group">
                             <div class="col">
                                 <?php
-                                    Echo '<button class="button" onclick="udateArticle(' . $article->kIDArticle . ');">Modifier</button>';
+                                    Echo '<button class="button" onclick="updateArticle(' . $article->kIDArticle . ');">Modifier</button>';
                                 ?>
                             </div>
                             <div class="col">
@@ -105,33 +105,34 @@
                                 </form>
                             </div>
                         </div>
+                    </div>
                             
-                        <div id="<?=$article->kIDArticle?>" class="row" style="display: none">  
-                            <form action="action/update_article.php" method="post" id="form_<?php $article->kIDArticle ?>">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>Titre de l'article : </label>
-                                            <input value="<?=$article->sArticleTitle?>" id="input_article_title" type="textarea" name="input_article_title" class="form-control" required>
-                                            <input style="display: none" value="<?=$article->kIDArticle?>" name="input_article_id">
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label>Contenu de l'article : </label>
-                                            <textarea rows="4" cols="50" name="input_article_text" id="input_article_text"><?=$article->sArticleText?></textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div id="<?=$article->kIDArticle?>" class="row" style="display: none">  
+                        <form action="action/update_article.php" method="post" id="form_<?php $article->kIDArticle ?>">
                             <div class="row">
                                 <div class="col">
-                                    <?php
-                                    Echo '<button class="button" onclick="validateUdateArticle(' . $article->kIDArticle . ');">Validate</button>';
-                                    ?>
-                                </div>                        
+                                    <div class="form-group">
+                                        <label>Titre de l'article : </label>
+                                        <input value="<?=$article->sArticleTitle?>" id="input_article_title" type="textarea" name="input_article_title" class="form-control" required>
+                                        <input style="display: none" value="<?=$article->kIDArticle?>" name="input_article_id">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Contenu de l'article : </label>
+                                        <textarea rows="4" cols="50" name="input_article_text" id="input_article_text"><?=$article->sArticleText?></textarea>
+                                    </div>
+                                </div>
                             </div>
-                            </form>
+                        <div class="row">
+                            <div class="col">
+                                <?php
+                                Echo '<button class="button" onclick="validateUpdateArticle(' . $article->kIDArticle . ');">Validate</button>';
+                                ?>
+                            </div>                        
                         </div>
+                        </form>
+                        <hr>
                     </div>
                     <?php 
                     }

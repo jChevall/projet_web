@@ -52,3 +52,24 @@ ul li img{
     clear:both;
     font-size:0;
 }
+
+.article {
+    display: flex;
+}
+
+.article_title {
+    flex: 1;
+}
+
+.article_date {
+    flex: 1;
+}
+
+.article_btn_group {
+    flex: 5;
+}
+
+.row, .article_btn_group {
+    margin: inherit !important;
+}
+

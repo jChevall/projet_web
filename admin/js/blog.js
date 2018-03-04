@@ -34,10 +34,14 @@ function newArticle(){
     }
 }
 
-function udateArticle(id){
-    document.getElementById(id).style.display = "block";
+function updateArticle(id){
+    if (document.getElementById(id).style.display === "block") {
+        document.getElementById(id).style.display = "none";   
+    } else {
+        document.getElementById(id).style.display = "block";
+    }
 }
 
-function validateUdateArticle(id){
+function validateUpdateArticle(id){
     document.getElementById(id).style.display = "none";
 }
