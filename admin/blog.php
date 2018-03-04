@@ -20,7 +20,7 @@
                     </div>                        
                 </div>
                 <div id="newArticle" class="row" style="display: none">                
-                    <form action="action/create_article.php" method="post" id="form_general">
+                    <form action="action/create_article.php" method="post" id="form_general" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -40,7 +40,6 @@
                                 <div class="form-group">
                                     <label>Image de l'article : </label>
                                     <input type="button" class="submit-file" id="file_btn" value="Choisir un fichier">
-                                    <!-- ICI L'IMAGE -->
                                 </div>
                             </div>
                         </div>

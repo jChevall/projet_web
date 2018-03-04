@@ -24,7 +24,13 @@ $article = new article();
 
 $article->sArticleTitle = $_POST['input_article_title'];
 $article->sArticleText = $_POST['input_article_text'];
-$article->sArticleMedia = "";
+
+$extension_upload = strtolower(  substr(  strrchr($_FILES['img']['name'], '.')  ,1)  );
+$nom = time().md5(uniqid(rand(), true));
+
+move_uploaded_file($_FILES['img']['tmp_name'],'../../img/article/'.$nom.'.'.$extension_upload);
+
+$article->sArticleMedia = $nom;
 
 $date = new DateTime();
 $date = $date->format('Y-m-d H:i:s');

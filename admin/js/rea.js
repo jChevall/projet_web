@@ -4,7 +4,6 @@ const file_input = document.getElementById("file_input");
 const img_input = document.getElementById("img_input");
 
 file_btn.addEventListener("click", fireClickOnInput);
-
 file_input.addEventListener("change", showThumbnail);
 
 function fireClickOnInput() {
