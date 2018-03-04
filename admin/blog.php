@@ -73,6 +73,7 @@
                     $articles = new article();
                     $articles = $articles->getAllArticle();
                     if ($articles === null) { ?>
+                        <br><hr>
                         <div>
                             <h1>Aucun article</h1>
                             <h3>Ecrivez votre premier article ;)</h3>
@@ -80,6 +81,7 @@
                     <?php 
                     } else {
                     foreach ($articles as $article) { ?>
+                        <br><hr>
                         <div>
                             <label><?=$article->sArticleTitle?></label>                          
                             <label>Crée le <?php 
@@ -135,6 +137,7 @@
                     }
                     }
                 ?>
+                <br><hr>
                 
             </div>
         </div>
