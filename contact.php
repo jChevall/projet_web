@@ -36,7 +36,7 @@
                         <p><?=$website->contact_name?></p>
                         <p>Tel : <?=$website->contact_tel?></p>
                         <p>Mail : <?=$website->contact_mail?></p>
-                        <a href="<?=$website->contact_facebook?>">Facebook</a> <span>-</span> <a href="<?=$website->contact_twitter?>">Twitter</a>
+                        <a href="<?=$website->contact_facebook?>" target="_blank">Facebook</a> <span>-</span> <a href="<?=$website->contact_twitter?>" target="_blank">Twitter</a>
                     </div>
                 </div>
                 
