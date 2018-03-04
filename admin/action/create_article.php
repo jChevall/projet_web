@@ -30,7 +30,7 @@ $nom = time().md5(uniqid(rand(), true));
 
 move_uploaded_file($_FILES['img']['tmp_name'],'../../img/article/'.$nom.'.'.$extension_upload);
 
-$article->sArticleMedia = $nom;
+$article->sArticleMedia = $nom.'.'.$extension_upload;
 
 $date = new DateTime();
 $date = $date->format('Y-m-d H:i:s');

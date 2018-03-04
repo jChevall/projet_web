@@ -45,9 +45,6 @@
                                                 <div class="inlineCol">
                                                     <input type="button" class="submit-file" id="file_btn" value="Choisir un fichier">
                                                 </div>
-                                                <div class="inlineCol">
-                                                    <input type="submit" id="img_submit">
-                                                </div>
                                                 <input type="file" id="file_input" name="img">
                                             </div>
                                         </div>

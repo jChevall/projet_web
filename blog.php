@@ -24,7 +24,7 @@
                         foreach ($articles as $article) { ?>
                             <div class="row">
                                 <h1><?=$article->sArticleTitle?></h1>
-                                <p><?=$article->sArticleMedia?></p>
+                                <img src="img/article/<?=$article->sArticleMedia?>">
                                 <p><?=$article->sArticleText?></p>
                                 <p>Crée le <?php 
                                     setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1');                                    
