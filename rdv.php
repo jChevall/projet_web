@@ -21,7 +21,7 @@
                 $cours = new cours();
                 $cours = $cours->getAllCours();
                 if ($cours === null) { ?>
-                    <div>
+                    <div class="cour">
                         <h1>Aucun cours disponible.</h1>
                         <h3>Revenez plus tard ;)</h3>
                     </div>

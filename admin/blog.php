@@ -39,9 +39,28 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label>Image de l'article : </label>
-                                    <input type="button" class="submit-file" id="file_btn" value="Choisir un fichier">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="inline-form-group">
+                                                <div class="inlineCol">
+                                                    <input type="button" class="submit-file" id="file_btn" value="Choisir un fichier">
+                                                </div>
+                                                <div class="inlineCol">
+                                                    <input type="submit" id="img_submit">
+                                                </div>
+                                                <input type="file" id="file_input" name="img">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col">
+                                <img id="img_input">
+                            </div>
+                            <div class="col"></div>
                         </div>
                     <div class="row">
                         <div class="col">
